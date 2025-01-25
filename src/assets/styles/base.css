@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.mybutton {
+  all: unset;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+@font-face {
+  font-family: "myfont";
+  src: url(../assets/fonts/NotoSans-Regular.ttf);
+}
+/* For Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}

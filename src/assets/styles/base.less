@@ -1,0 +1,42 @@
+@primary-color: #3B73F0;
+@first-color: hsl(224, 89%, 60%);
+@second-color: hsl(224, 56%, 12%);
+@gray-1: #202020;
+@gray-2: #5B5B5B;
+@gray-3: #949494;
+@gray-4: #F6F6F8;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+.mybutton {
+  all: unset;
+}
+
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+@font-face {
+  font-family: "myfont";
+  src: url(../assets/fonts/NotoSans-Regular.ttf);
+}
+
+/* For Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px; 
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none; 
+}

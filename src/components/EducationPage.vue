@@ -23,14 +23,30 @@
 </template>
 
 <script setup>
+  import { onMounted } from 'vue';
+  import ScrollReveal from 'scrollreveal';
+  import { revealConfig } from '../utils/config';
 
+  onMounted(()=>{
+
+    ScrollReveal().reveal('.title', {
+      ...revealConfig,
+      origin: 'top',
+    });
+    ScrollReveal().reveal('.content .school-box', {
+      ...revealConfig,
+      interval: 200,
+      origin: 'top',
+    });
+
+  })
 </script>
 
 <style lang="less" scoped>
   .education{
     width: calc(100% - 300px);
     margin-left: 150px;
-    margin-bottom: 150px;
+    padding-top: 100px;
     text-align: center;
     .title{
       display: inline-block;
@@ -49,33 +65,33 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 360px;
-        width: 330px;
+        height: 400px;
+        width: 360px;
         border: 3px solid @first-color;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(146, 161, 176, 0.6);
         .stage{
           color: @primary-color;
-          font-size: 20px;
+          font-size: 22px;
           font-weight: 600;
-          margin-top: 20px;
+          margin-top: 22px;
         }
         .image{
-          width: 150px;
+          width: 160px;
           margin-top: 15px;
         }
         .name{
           margin-top: 20px;
-          font-size: 18px;
+          font-size: 20px;
           font-weight: 600;
         }
         .major{
-          margin-top: 10px;
-          font-size: 16px;
+          margin-top: 15px;
+          font-size: 18px;
         }
         .time{
-          margin-top: 10px;
-          font-size: 16px;
+          margin-top: 15px;
+          font-size: 18px;
         }
       }
 

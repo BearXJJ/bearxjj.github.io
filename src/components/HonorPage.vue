@@ -29,13 +29,27 @@
 
 <script setup>
 
+  import { onMounted } from 'vue';
+  import ScrollReveal from 'scrollreveal';
+  import { revealConfig } from '../utils/config';
+
+  onMounted(()=>{
+
+    ScrollReveal().reveal('.content .bubble', {
+      ...revealConfig,
+      interval: 300,
+      origin: 'top',
+    });
+
+  })
+
 </script>
 
 <style lang="less" scoped>
   .honor{
     width: calc(100% - 300px);
     margin-left: 150px;
-    margin-bottom: 150px;
+    padding-top: 100px;
     text-align: center;
     .title{
       display: inline-block;
@@ -62,7 +76,7 @@
         padding: 0 10px;
         box-shadow: 2px 2px 4px #888;
         margin-top: 40px;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 600;
         .year{
           position: absolute;

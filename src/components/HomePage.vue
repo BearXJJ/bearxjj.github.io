@@ -3,7 +3,7 @@
 
     <div class="left">
       <div class="prologue">
-        <h1 class="title">Hi,<br>I'm <span class="name">Junjie Xiong</span></h1>
+        <h1>Hi,<br>I'm <span class="name">Junjie Xiong</span></h1>
         <div class="about">I am currently in my final year as an undergraduate student at <a href="#" class="name link">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="#" class="name link">Prof. Quan Li</a>.</div>
       </div>
 
@@ -24,17 +24,50 @@
         </g>
       </svg>
     </div>
+
+    <div class="down-icon">
+      <box-icon name='chevrons-down' animation='flashing' flip='horizontal' size='100px' color='#6b6b6b'></box-icon>
+    </div>
+
   </div>
 
 </template>
 
 <script setup>
+  import { onMounted } from 'vue';
+  import ScrollReveal from 'scrollreveal';
+  import { revealConfig } from '../utils/config';
+
+  onMounted(()=>{
+
+    ScrollReveal().reveal('.prologue', {
+      ...revealConfig,
+      delay: 1000,
+      origin: 'left',
+      reset: false,
+    });
+    ScrollReveal().reveal('.social .social-icon', {
+      ...revealConfig,
+      delay: 1200,
+      interval: 200,
+      origin: 'top',
+      reset: false,
+    });
+    ScrollReveal().reveal('.profile', {
+      ...revealConfig,
+      delay: 1200,
+      origin: 'right',
+      reset: false,
+    });
+
+  })
 
 </script>
 
 <style lang="less" scoped>
   .home{
     display: flex;
+    position: relative;
     height: calc(100vh - 80px);
     width: calc(100% - 300px);
     padding-top: 80px;
@@ -64,13 +97,13 @@
             transition: width 0.3s ease;
           }
           &:hover::after {
-            width: 100%;  /* 鼠标悬停时，宽度扩展至 100% */
+            width: 100%;
           }
         }
         .about{
           color: @gray-2;
           margin-top: 10px;
-          font-size: 23px;
+          font-size: 25px;
           line-height: 1.5;
         }
       }
@@ -99,6 +132,11 @@
           }
         }
       }
+    }
+    .down-icon{
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 50px);
     }
   }
 </style>

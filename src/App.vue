@@ -3,36 +3,52 @@
     <header class="header">
         <img class="logo" src="./assets/icons/logo.png" alt="">
         <div class="menu" id="menu">
-          <a href="#home" class="link link-active">About</a>
-          <a href="#about" class="link">Educations</a>
-          <a href="#skills" class="link">Publications</a>
-          <a href="#work" class="link">Honors</a>
-          <!-- <a href="#contact" class="link">Contact</a> -->
+          <button class="mybutton link" @click="scrollToSection('about')">About</button>
+          <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
+          <button class="mybutton link" @click="scrollToSection('publications')">Publications</button>
+          <button class="mybutton link" @click="scrollToSection('honors')">Honors</button>
         </div>
-        <!-- <div class="toggle" id="toggle">
-          <box-icon name='menu'></box-icon>
-        </div> -->
     </header>
 
-    <Home></Home>
-    <EducationPage></EducationPage>
-    <PublicationPage></PublicationPage>
-    <HonorPage></HonorPage>
+    <Home id="about"></Home>
+    <EducationPage id="educations"></EducationPage>
+    <PublicationPage id="publications"></PublicationPage>
+    <HonorPage id="honors"></HonorPage>
 
   </div>
 </template>
 
 <script setup>
   import { onMounted } from 'vue';
+  import ScrollReveal from 'scrollreveal';
   import Home from './components/HomePage.vue';
   import EducationPage from './components/EducationPage.vue';
   import PublicationPage from './components/PublicationPage.vue';
   import HonorPage from './components/HonorPage.vue';
+  import { revealConfig } from './utils/config';
 
   onMounted(()=>{
     document.documentElement.classList.add('hide-scrollbar');
+
+    ScrollReveal().reveal('.logo, .menu .link', {
+      ...revealConfig,
+      origin: 'top',
+      interval: 200,
+      reset: false,
+    });
+
   })
 
+  const scrollToSection = (sectionId) => {
+    const targetElement = document.getElementById(sectionId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
+  };
 
 
 </script>
@@ -67,9 +83,24 @@
         font-size: 20px;
         font-weight: 600;
         .link{
+          position: relative;
           height: 65px;
           color: @gray-1;
           margin-right: 40px;
+          &::after{
+            position: absolute;
+            content: '';
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: @first-color;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+          }
+          &:hover::after {
+            width: 100%;
+          }
         }
         .link-active{
           border-bottom: 2px solid @primary-color;

@@ -18,13 +18,27 @@
 
 <script setup>
 
+  import { onMounted } from 'vue';
+  import ScrollReveal from 'scrollreveal';
+  import { revealConfig } from '../utils/config';
+
+  onMounted(()=>{
+
+    ScrollReveal().reveal('.content .paper', {
+      ...revealConfig,
+      interval: 500,
+      origin: 'top',
+    });
+
+  })
+
 </script>
 
 <style lang="less" scoped>
   .publication{
     width: calc(100% - 300px);
     margin-left: 150px;
-    margin-bottom: 150px;
+    padding-top: 100px;
     text-align: center;
     .title{
       display: inline-block;
@@ -82,7 +96,7 @@
             box-shadow: 8px 15px 15px rgba(0, 0, 0, 0.3);
           }
           .name{
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
             font-style: italic;
           }

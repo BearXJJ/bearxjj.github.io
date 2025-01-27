@@ -96,7 +96,7 @@
             bottom: -2px;
             left: 50%;
             width: 0;
-            height: 2px;
+            height: 3px;
             background-color: @first-color;
             transition: width 0.3s ease;
             transform: translateX(-50%);

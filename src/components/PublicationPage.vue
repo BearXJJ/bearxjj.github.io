@@ -36,8 +36,8 @@
 
 <style lang="less" scoped>
   .publication{
-    width: calc(100% - 300px);
-    margin-left: 150px;
+    width: calc(100% - 16%);
+    margin-left: 8%;
     padding-top: 100px;
     text-align: center;
     .title{

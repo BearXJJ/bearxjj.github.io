@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="homepage" @touchstart="touchPlayColor" @click="playColor">
     <header class="header">
         <img class="logo" src="./assets/icons/logo.png" @click="scrollToSection('about')" alt="">
         <div class="menu" id="menu">
@@ -39,6 +39,7 @@
 
   })
 
+  // 点击跳转到对应组件位置
   const scrollToSection = (sectionId) => {
     const targetElement = document.getElementById(sectionId);
     if (targetElement) {
@@ -49,6 +50,21 @@
     }
 
   };
+
+  // 点击事件
+  const playColor = (e) => {
+    // console.log(e);
+    const color = new window.colorBall();
+    color.fly(e.clientX, e.clientY);
+  }
+
+  // 触摸事件
+  const touchPlayColor = (e) => {
+    const color = new window.colorBall();
+    color.fly(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+    e.stopPropagation();
+    e.preventDefault();
+  }
 
 
 </script>
@@ -73,7 +89,7 @@
         width: 50px;
         height: 55px;
         margin: auto;
-        margin-left: 150px;
+        margin-left: 8%;
         transition: transform 0.3s ease;
         &:hover{
           transform: rotate(360deg);
@@ -108,7 +124,7 @@
         .link-active{
           border-bottom: 2px solid @primary-color;
         }
-        margin-right: 110px;
+        margin-right: 8%;
       }
     }
   }

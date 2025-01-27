@@ -75,9 +75,9 @@
     position: relative;
     position: relative;
     height: calc(100vh - 80px);
-    width: calc(100% - 300px);
+    width: calc(100% - 16%);
     padding-top: 80px;
-    margin-left: 150px;
+    margin-left: 8%;
     // background-color: #000000;
     .left{
       display: flex;
@@ -86,7 +86,8 @@
       width: 50%;
       height: 100%;
       .prologue{
-        font-size: 36px;
+        // font-size: 36px;
+        font-size: clamp(16px, 2vw, 36px);
         .name{
           color: @first-color;
         }
@@ -104,14 +105,13 @@
           }
           &:hover::after {
             width: 100%;
-            width: 100%;
           }
         }
         .about-text{
           color: @gray-2;
           margin-top: 10px;
-          font-size: 25px;
-          font-size: 25px;
+          // font-size: 25px;
+          font-size: clamp(14px, 1.5vw, 25px);
           line-height: 1.5;
         }
       }

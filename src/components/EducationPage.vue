@@ -44,8 +44,8 @@
 
 <style lang="less" scoped>
   .education{
-    width: calc(100% - 300px);
-    margin-left: 150px;
+    width: calc(100% - 16%);
+    margin-left: 8%;
     padding-top: 100px;
     text-align: center;
     .title{
@@ -59,7 +59,8 @@
     .content{
       display: flex;
       justify-content: space-evenly;
-      margin-top: 50px;
+      flex-wrap: wrap;
+      margin-top: 20px;
       .school-box {
         display: flex;
         flex-direction: column;
@@ -70,6 +71,7 @@
         border: 3px solid @first-color;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(146, 161, 176, 0.6);
+        margin-top: 30px;
         .stage{
           color: @primary-color;
           font-size: 22px;

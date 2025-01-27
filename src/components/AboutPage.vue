@@ -1,15 +1,15 @@
 <template>
-  <div class="home">
+  <div class="about">
 
     <div class="left">
       <div class="prologue">
         <h1>Hi,<br>I'm <span class="name">Junjie Xiong</span></h1>
-        <div class="about">I am currently in my final year as an undergraduate student at <a href="#" class="name link">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="#" class="name link">Prof. Quan Li</a>.</div>
+        <div class="about-text">I am currently in my final year as an undergraduate student at <a href="https://www.shanghaitech.edu.cn/" class="name link">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link">Prof. Quan Li</a>.</div>
       </div>
 
       <div class="social">
-        <a href="" class="social-icon"><box-icon type='logo' name='github' size='36px'></box-icon></a>
-        <a href="" class="social-icon"><box-icon name='envelope' size='36px'></box-icon></a>
+        <a href="https://github.com/BearXJJ" class="social-icon"><box-icon type='logo' name='github' size='36px'></box-icon></a>
+        <a href="mailto:xiongjj@shanghaitech.edu.cn" class="social-icon"><box-icon name='envelope' size='36px'></box-icon></a>
       </div>
     </div>
 
@@ -24,6 +24,11 @@
         </g>
       </svg>
     </div>
+
+    <div class="down-icon">
+      <box-icon name='chevrons-down' animation='flashing' flip='horizontal' size='100px' color='#6b6b6b'></box-icon>
+    </div>
+
 
     <div class="down-icon">
       <box-icon name='chevrons-down' animation='flashing' flip='horizontal' size='100px' color='#6b6b6b'></box-icon>
@@ -65,8 +70,9 @@
 </script>
 
 <style lang="less" scoped>
-  .home{
+  .about{
     display: flex;
+    position: relative;
     position: relative;
     height: calc(100vh - 80px);
     width: calc(100% - 300px);
@@ -98,11 +104,13 @@
           }
           &:hover::after {
             width: 100%;
+            width: 100%;
           }
         }
-        .about{
+        .about-text{
           color: @gray-2;
           margin-top: 10px;
+          font-size: 25px;
           font-size: 25px;
           line-height: 1.5;
         }
@@ -132,6 +140,11 @@
           }
         }
       }
+    }
+    .down-icon{
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 50px);
     }
     .down-icon{
       position: absolute;

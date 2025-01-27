@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <header class="header">
-        <img class="logo" src="./assets/icons/logo.png" alt="">
+        <img class="logo" src="./assets/icons/logo.png" @click="scrollToSection('about')" alt="">
         <div class="menu" id="menu">
           <button class="mybutton link" @click="scrollToSection('about')">About</button>
           <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
@@ -10,7 +10,7 @@
         </div>
     </header>
 
-    <Home id="about"></Home>
+    <AboutPage id="about"></AboutPage>
     <EducationPage id="educations"></EducationPage>
     <PublicationPage id="publications"></PublicationPage>
     <HonorPage id="honors"></HonorPage>
@@ -21,7 +21,7 @@
 <script setup>
   import { onMounted } from 'vue';
   import ScrollReveal from 'scrollreveal';
-  import Home from './components/HomePage.vue';
+  import AboutPage from './components/AboutPage.vue';
   import EducationPage from './components/EducationPage.vue';
   import PublicationPage from './components/PublicationPage.vue';
   import HonorPage from './components/HonorPage.vue';
@@ -30,7 +30,7 @@
   onMounted(()=>{
     document.documentElement.classList.add('hide-scrollbar');
 
-    ScrollReveal().reveal('.logo, .menu .link', {
+    ScrollReveal().reveal('.menu .link', {
       ...revealConfig,
       origin: 'top',
       interval: 200,
@@ -74,7 +74,10 @@
         height: 55px;
         margin: auto;
         margin-left: 150px;
-        font-size: 20px;
+        transition: transform 0.3s ease;
+        &:hover{
+          transform: rotate(360deg);
+        }
       }
       .menu{
         display: flex;

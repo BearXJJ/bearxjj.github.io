@@ -6,7 +6,6 @@
         <div class="stage">High School</div>
         <img class="image" src="../assets/images/cqyz.png" alt="">
         <div class="name">Chongqing No.1 Middle School</div>
-        <div class="major"> <br> <br> </div>
         <div class="time">2018.9 - 2021.6</div>
       </div>
       <div class="school-box">
@@ -66,17 +65,17 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 400px;
+        height: 360px;
         width: 360px;
         border: 3px solid @first-color;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(146, 161, 176, 0.6);
         margin-top: 30px;
+        padding: 20px 0;
         .stage{
           color: @primary-color;
           font-size: 22px;
           font-weight: 600;
-          margin-top: 22px;
         }
         .image{
           width: 160px;
@@ -96,7 +95,24 @@
           font-size: 18px;
         }
       }
-
     }
   }
+
+  @media screen and (max-width: 1000px){
+      .education{
+        width: 90%;
+        margin-left: 5%;
+        .content{
+          .school-box{
+            height: auto;
+            .image{
+              display: none;
+            }
+            .name{
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
 </style>

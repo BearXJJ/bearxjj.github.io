@@ -29,11 +29,6 @@
       <box-icon name='chevrons-down' animation='flashing' flip='horizontal' size='100px' color='#6b6b6b'></box-icon>
     </div>
 
-
-    <div class="down-icon">
-      <box-icon name='chevrons-down' animation='flashing' flip='horizontal' size='100px' color='#6b6b6b'></box-icon>
-    </div>
-
   </div>
 
 </template>
@@ -42,7 +37,6 @@
   import { onMounted } from 'vue';
   import ScrollReveal from 'scrollreveal';
   import { revealConfig } from '../utils/config';
-
   onMounted(()=>{
 
     ScrollReveal().reveal('.prologue', {
@@ -83,11 +77,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 50%;
+      // width: 50%;
+      flex: 1;
       height: 100%;
       .prologue{
         // font-size: 36px;
-        font-size: clamp(16px, 2vw, 36px);
+        font-size: clamp(20px, 2vw, 36px);
         .name{
           color: @first-color;
         }
@@ -111,7 +106,7 @@
           color: @gray-2;
           margin-top: 10px;
           // font-size: 25px;
-          font-size: clamp(14px, 1.5vw, 25px);
+          font-size: clamp(15px, 1.5vw, 25px);
           line-height: 1.5;
         }
       }
@@ -152,4 +147,15 @@
       left: calc(50% - 50px);
     }
   }
+
+  @media screen and (max-width: 1000px){
+    .about{
+      width: 90%;
+      margin-left: 5%;
+      .profile{
+        display: none;
+      }
+    }
+  }
+
 </style>

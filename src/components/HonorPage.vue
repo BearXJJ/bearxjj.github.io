@@ -63,7 +63,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      margin-bottom: 50px;
+      padding-bottom: 200px;
       .bubble{
         display: inline-block;
         position: relative;
@@ -103,12 +103,6 @@
           padding: 0 10px;
         }
       }
-
-
-
-
-
-
       .bubble-left{
         &::before{
           content: ' ';
@@ -151,6 +145,30 @@
           top: 50px;
           border: 12px solid;
           border-color: #fff #fff transparent transparent ;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1000px){
+    .honor{
+      width: 90%;
+      margin-left: 5%;
+      .content{
+        .bubble{
+          font-size: 14px;
+          .year{
+            height: 20px;
+            line-height: 20px;
+            font-size: 15px;
+            top: -10px;
+          }
+          .level{
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            bottom: -10px;
+          }
         }
       }
     }

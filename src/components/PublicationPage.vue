@@ -113,4 +113,49 @@
       }
     }
   }
+
+  @media screen and (max-width: 1000px){
+    .publication{
+      width: 90%;
+      margin-left: 5%;
+      .content{
+        .paper{
+          height: 400px;
+          width: 100%;
+          .system-image{
+            display: none;
+          }
+          .info{
+            padding: 20px;
+            width: calc(100% - 40px);
+            left: 0;
+            background-image: url('../assets/images/cluecart.png');
+            background-size: cover;
+            background-position: center;
+            color: @gray-1;
+            z-index: 0;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(110, 161, 233, 0.8);
+              z-index: 1;
+            }
+            .name{
+              z-index: 2;
+            }
+            .author{
+              z-index: 2;
+            }
+            .acceptby{
+              z-index: 2;
+            }
+          }
+        }
+      }
+    }
+  }
 </style>

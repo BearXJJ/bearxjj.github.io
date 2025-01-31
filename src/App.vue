@@ -66,6 +66,8 @@
     e.preventDefault();
   }
 
+  //移动端禁用滚动动画
+  ScrollReveal({ mobile: false });
 
 </script>
 
@@ -128,4 +130,15 @@
       }
     }
   }
+
+  @media screen and (max-width: 1000px){
+    .homepage{
+      .header{
+        .menu{
+          display: none;
+        }
+      }
+    }
+  }
+
 </style>

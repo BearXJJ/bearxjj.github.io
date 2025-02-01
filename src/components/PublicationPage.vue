@@ -58,7 +58,7 @@
         height: 500px;
         width: 80%;
         // border: 2px solid;
-        margin-top: 20px;
+        // margin-top: 20px;
         .system-image{
           position: absolute;
           height: 90%;

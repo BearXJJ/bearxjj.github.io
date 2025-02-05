@@ -50,6 +50,8 @@
   import HonorPage from './components/HonorPage.vue';
   import { revealConfig } from './utils/config';
 
+  import './utils/click-colorful.js';
+
   onMounted(()=>{
     document.documentElement.classList.add('hide-scrollbar');
 

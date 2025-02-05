@@ -31,11 +31,11 @@
         </svg>
       </div>
       <div class="menu-mobile">
-          <button class="mybutton link" @click="scrollToSection('about')">About</button>
-          <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
-          <button class="mybutton link" @click="scrollToSection('publications')">Publications</button>
-          <button class="mybutton link" @click="scrollToSection('honors')">Honors</button>
-        </div>
+        <button class="mybutton link" @click="scrollToSection('about')">About</button>
+        <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
+        <button class="mybutton link" @click="scrollToSection('publications')">Publications</button>
+        <button class="mybutton link" @click="scrollToSection('honors')">Honors</button>
+      </div>
     </div>
 
   </div>
@@ -67,7 +67,9 @@
   // 点击跳转到对应组件位置
   const scrollToSection = (sectionId) => {
 
-    changeMenuState();
+    if (window.innerWidth <= 1000) {
+      changeMenuState();
+    }
 
     const targetElement = document.getElementById(sectionId);
     if (targetElement) {

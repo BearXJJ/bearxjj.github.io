@@ -102,14 +102,6 @@
 		}, 1000 )
 
 	}
-	//兼容CommonJs规范
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = colorBall;
-	};
-	//兼容AMD/CMD规范
-	if (typeof define === 'function') define(function() {
-		return colorBall;
-	});
 	//注册全局变量，兼容直接使用script标签引入插件
 	win.colorBall = colorBall;
  })(window, document)

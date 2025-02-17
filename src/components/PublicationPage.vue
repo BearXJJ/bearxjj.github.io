@@ -37,7 +37,8 @@
 <style lang="less" scoped>
   .publication{
     width: calc(100% - 16%);
-    margin-left: 8%;
+    max-width: 1500px;
+    margin: auto;
     padding-top: 100px;
     text-align: center;
     .title{
@@ -58,7 +59,7 @@
         height: 500px;
         width: 80%;
         // border: 2px solid;
-        // margin-top: 20px;
+        margin-top: 20px;
         .system-image{
           position: absolute;
           height: 90%;

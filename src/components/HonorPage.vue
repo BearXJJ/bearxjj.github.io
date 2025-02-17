@@ -48,7 +48,8 @@
 <style lang="less" scoped>
   .honor{
     width: calc(100% - 16%);
-    margin-left: 8%;
+    max-width: 1500px;
+    margin: auto;
     padding-top: 100px;
     text-align: center;
     .title{

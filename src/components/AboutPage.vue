@@ -4,7 +4,7 @@
     <div class="left">
       <div class="prologue">
         <h1>Hi,<br>I'm <span class="name">Junjie Xiong</span></h1>
-        <div class="about-text">I am currently in my final year as an undergraduate student at <a href="https://www.shanghaitech.edu.cn/" class="name link">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link">Prof. Quan Li</a>.</div>
+        <div class="about-text">I am currently in my final year as an undergraduate student at <a href="https://www.shanghaitech.edu.cn/" class="name link" target="_blank">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link" target="_blank">Prof. Quan Li</a>.</div>
       </div>
 
       <div class="social">
@@ -70,8 +70,9 @@
     position: relative;
     height: calc(100vh - 80px);
     width: calc(100% - 16%);
+    max-width: 1500px;
     padding-top: 80px;
-    margin-left: 8%;
+    margin: auto;
     // background-color: #000000;
     .left{
       display: flex;
@@ -124,7 +125,7 @@
       text-align: right;
       .blob{
         width: 85%;
-        fill: @first-color;
+        fill: rgba(120, 134, 24, 0.9);
         margin-top: calc(15%);
         .image{
           width: 420px;

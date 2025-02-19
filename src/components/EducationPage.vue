@@ -52,8 +52,8 @@
       display: inline-block;
       width: auto;
       font-size: 30px;
-      color: @first-color;
-      border-bottom: 2px solid @first-color;
+      color: @theme-color;
+      border-bottom: 2px solid @theme-color;
       padding-bottom: 3px;
     }
     .content{
@@ -68,8 +68,8 @@
         align-items: center;
         height: 360px;
         width: 360px;
-        color: #000;
-        border: 3px solid @first-color;
+        color: @text-color-1;
+        border: 3px solid @theme-color;
         border-radius: 10px;
         box-shadow: 0 4px 15px rgba(146, 161, 176, 0.6);
         margin-top: 30px;
@@ -80,7 +80,7 @@
           box-shadow: rgba(0,0,0,0.4) 0px 8px 32px 0px;
         }
         .stage{
-          color: @primary-color;
+          color: @theme-color;
           font-size: 22px;
           font-weight: 600;
         }

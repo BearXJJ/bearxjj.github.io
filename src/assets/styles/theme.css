@@ -1,0 +1,14 @@
+.themeLight {
+  --theme-color: #3e6ef3;
+  --text-color-1: #202020;
+  --text-color-2: #4b4b4b;
+  --bg-color: #ffffff;
+  --card-color: #82a2f4;
+}
+.themeDark {
+  --theme-color: #04d8d8;
+  --text-color-1: rgba(249, 250, 251, 0.9);
+  --text-color-2: rgba(249, 250, 251, 0.7);
+  --bg-color: #111827;
+  --card-color: #0395a5;
+}

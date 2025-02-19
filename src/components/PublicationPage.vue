@@ -45,8 +45,8 @@
       display: inline-block;
       width: auto;
       font-size: 30px;
-      color: @first-color;
-      border-bottom: 2px solid @first-color;
+      color: @theme-color;
+      border-bottom: 2px solid @theme-color;
       padding-bottom: 3px;
     }
     .content{
@@ -77,14 +77,14 @@
           top: 15%;
           font-size: 30px;
           font-weight: 700;
-          color: @gray-1;
+          color: @text-color-1;
         }
         .info{
           position: absolute;
           width: 45%;
           right: 0;
           top: 30%;
-          background-color: #82a2f4;
+          background-color: @card-color;
           padding: 30px 30px;
           text-align: right;
           display: flex;
@@ -92,7 +92,7 @@
           justify-content: flex-start;
           box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
           transition: 0.3s ease;
-          color: @gray-1;
+          color: @text-color-1;
           &:hover{
             box-shadow: 8px 15px 15px rgba(0, 0, 0, 0.3);
           }
@@ -133,7 +133,7 @@
             background-image: url('../assets/images/cluecart.png');
             background-size: cover;
             background-position: center;
-            color: @gray-1;
+            color: @text-color-1;
             z-index: 0;
             &::before {
               content: '';

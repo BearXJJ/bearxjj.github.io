@@ -8,7 +8,13 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   // base: '/bearxjj.github.io/',
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => ['box-icon'].includes(tag),
+        }
+      }
+    }),
     vueDevTools(),
   ],
   resolve: {
@@ -20,7 +26,7 @@ export default defineConfig({
     preprocessorOptions: {
         less: {
             charset: false,
-            additionalData: '@import "@/assets/styles/base.less";',
+            additionalData: '@import "@/assets/styles/theme.less"; @import "@/assets/styles/base.less";',
         },
     },
   },

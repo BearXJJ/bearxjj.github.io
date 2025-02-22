@@ -1,19 +1,19 @@
 <template>
   <div class="education">
-    <h1 class="title">Educations</h1>
+    <h1 class="title">{{ text.education }}</h1>
     <div class="content">
       <a class="school-box" href="https://cqyz.cn/" target="_blank">
-        <div class="stage">High School</div>
+        <div class="stage">{{ text.highSchool[0] }}</div>
         <img class="image" src="../assets/images/cqyz.png" alt="">
-        <div class="name">Chongqing No.1 Middle School</div>
-        <div class="time">2018.9 - 2021.6</div>
+        <div class="name">{{ text.highSchool[1] }}</div>
+        <div class="time">{{ text.highSchool[2] }}</div>
       </a>
       <a class="school-box" href="https://www.shanghaitech.edu.cn/" target="_blank">
-        <div class="stage">Bachelor</div>
+        <div class="stage">{{ text.bachelor[0] }}</div>
         <img class="image" src="../assets/images/shanghaitech.png" alt="">
-        <div class="name">ShanghaiTech University</div>
-        <div class="major">Computer Science and Technology<br> Minored in Finance</div>
-        <div class="time">2021.9 - present</div>
+        <div class="name">{{ text.bachelor[1] }}</div>
+        <div class="major">{{ text.bachelor[2] }}<br> {{ text.bachelor[3] }}</div>
+        <div class="time">{{ text.bachelor[4] }}</div>
       </a>
       <div class="school-box"></div>
     </div>
@@ -22,9 +22,10 @@
 </template>
 
 <script setup>
-  import { onMounted } from 'vue';
+  import { onMounted, computed } from 'vue';
   import ScrollReveal from 'scrollreveal';
   import { revealConfig } from '../utils/config';
+  import { useLanguageStore } from '@/stores/language';
 
   onMounted(()=>{
 
@@ -39,6 +40,10 @@
     });
 
   })
+
+  // 文字内容获取
+  const languageStore = useLanguageStore();
+  const text = computed(() => languageStore.text[languageStore.languageClass])
 </script>
 
 <style lang="less" scoped>

@@ -3,10 +3,10 @@
     <header class="header">
         <img class="logo" src="./assets/icons/logo.png" @click="scrollToSection('about')" @mouseenter="playSounds('./sounds/bubble.wav')" alt="">
         <div class="menu">
-          <button class="mybutton link" @click="scrollToSection('about')">About</button>
-          <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
-          <button class="mybutton link" @click="scrollToSection('publications')">Publications</button>
-          <button class="mybutton link" @click="scrollToSection('honors')">Honors</button>
+          <button class="mybutton link" @click="scrollToSection('about')">{{ text.about }}</button>
+          <button class="mybutton link" @click="scrollToSection('educations')">{{ text.education }}</button>
+          <button class="mybutton link" @click="scrollToSection('publications')">{{ text.publication }}</button>
+          <button class="mybutton link" @click="scrollToSection('honors')">{{ text.honor }}</button>
         </div>
         <box-icon class="menu-icon" name='menu' size="40px"
                   @click="changeMenuState"
@@ -28,6 +28,11 @@
       <box-icon :name="themeClass === 'themeLight' ? 'sun' : 'moon'"
                 size="35px"
                 :color="themeClass === 'themeLight' ? 'black' : 'white'"></box-icon>
+    </div>
+
+    <!-- 语言切换button -->
+    <div class="language-button" @click="changeLanguage()">
+      {{ languageStore.languageClass === 'CN' ? '中' : 'EN' }}
     </div>
 
     <!-- 移动端menu -->
@@ -55,7 +60,7 @@
 </template>
 
 <script setup>
-  import { onMounted, ref, nextTick} from 'vue';
+  import { onMounted, ref, nextTick, computed} from 'vue';
   import ScrollReveal from 'scrollreveal';
   import AboutPage from './components/AboutPage.vue';
   import EducationPage from './components/EducationPage.vue';
@@ -63,6 +68,7 @@
   import HonorPage from './components/HonorPage.vue';
   import { revealConfig } from './utils/config';
   import { playSounds } from './utils/utils';
+  import { useLanguageStore } from './stores/language'
   import './utils/click-colorful.js';
 
   onMounted(()=>{
@@ -135,14 +141,14 @@
     });
   }
 
-  // 初始化Light模式
-  let themeClass = ref('themeLight');
+  // 主题切换模块
+  let themeClass = ref(null);
   onMounted(()=>{
-    themeClass.value = localStorage.themeClass;
+    themeClass.value = localStorage.themeClass || 'themeLight';
     document.querySelector('html').classList.add(themeClass.value);
   })
-  const changeTheme = (type)=>{
-    type = (themeClass.value === 'themeLight') ? 'themeDark': 'themeLight';
+  const changeTheme = ()=>{
+    const type = (themeClass.value === 'themeLight') ? 'themeDark': 'themeLight';
     themeClass.value = type;
     localStorage.themeClass = type;
     if(type === 'themeLight') playSounds("./sounds/light-on.mp3");
@@ -156,6 +162,21 @@
         }
     });
     document.querySelector('html').classList.add(type);
+  }
+
+  // 文字内容获取
+  const languageStore = useLanguageStore();
+  const text = computed(() => languageStore.text[languageStore.languageClass])
+
+
+  // 语言切换模块
+  const changeLanguage = ()=>{
+    const type = (languageStore.languageClass === 'EN') ? 'CN': 'EN';
+    localStorage.languageClass = type;
+    languageStore.languageClass = type;
+    console.log(languageStore.languageClass)
+    console.log(languageStore.text)
+    playSounds("./sounds/bass.mp3");
   }
 
 </script>
@@ -230,11 +251,26 @@
       justify-content: center;
       align-items: center;
       right: 50px;
+      bottom: 120px;
+      height: 50px;
+      width: 50px;
+      border-radius: 10px;
+      border: @text-color-2 solid 2px;
+    }
+    .language-button{
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 50px;
       bottom: 50px;
       height: 50px;
       width: 50px;
       border-radius: 10px;
       border: @text-color-2 solid 2px;
+      font-size: 24px;
+      color: @text-color-1;
+      font-weight: 600;
     }
     .drawer{
       display: none;

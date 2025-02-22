@@ -1,6 +1,6 @@
 <template>
   <div class="publication">
-    <h1 class="title">Publications</h1>
+    <h1 class="title">{{ text.publication }}</h1>
     <div class="content">
       <div class="paper">
         <img class="system-image" src="../assets/images/cluecart.png" alt="">
@@ -18,9 +18,10 @@
 
 <script setup>
 
-  import { onMounted } from 'vue';
+  import { onMounted, computed } from 'vue';
   import ScrollReveal from 'scrollreveal';
   import { revealConfig } from '../utils/config';
+  import { useLanguageStore } from '@/stores/language';
 
   onMounted(()=>{
 
@@ -31,6 +32,10 @@
     });
 
   })
+
+  // 文字内容获取
+  const languageStore = useLanguageStore();
+  const text = computed(() => languageStore.text[languageStore.languageClass])
 
 </script>
 

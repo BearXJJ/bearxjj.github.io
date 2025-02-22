@@ -3,8 +3,8 @@
 
     <div class="left">
       <div class="prologue">
-        <h1>Hi,<br>I'm <span class="name">Junjie Xiong</span></h1>
-        <div class="about-text">I am currently in my final year as an undergraduate student at <a href="https://www.shanghaitech.edu.cn/" class="name link" target="_blank">ShanghaiTech University</a>, majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of <a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link" target="_blank">Prof. Quan Li</a>.</div>
+        <h1>{{ text.hi }}<br>{{ text.im }} <span class="name">{{ text.name }}</span></h1>
+        <div class="about-text">{{ text.intro[0] }}<a href="https://www.shanghaitech.edu.cn/" class="name link" target="_blank">{{ text.intro[1] }}</a>{{ text.intro[2] }}<a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link" target="_blank">{{ text.intro[3] }}</a>{{ text.intro[4] }} </div>
       </div>
 
       <div class="social">
@@ -34,10 +34,10 @@
 </template>
 
 <script setup>
-  import { onMounted } from 'vue';
+  import { onMounted, computed } from 'vue';
   import ScrollReveal from 'scrollreveal';
   import { revealConfig } from '../utils/config';
-  // import { playSounds } from '@/utils/utils';
+  import { useLanguageStore } from '@/stores/language';
 
   defineProps(['themeClass']);
 
@@ -63,6 +63,10 @@
     });
 
   })
+
+  // 文字内容获取
+  const languageStore = useLanguageStore();
+  const text = computed(() => languageStore.text[languageStore.languageClass])
 
 </script>
 

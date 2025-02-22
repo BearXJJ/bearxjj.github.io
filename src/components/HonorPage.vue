@@ -1,26 +1,26 @@
 <template>
   <div class="honor">
-    <h1 class="title">Honors</h1>
+    <h1 class="title">{{ text.honor }}</h1>
     <div class="content">
       <div class="bubble">
         <div class="year">2022 2023 2024</div>
-        <div class="level">ShanghaiTech University</div>
-        National Encouragement Scholarship
+        <div class="level">{{ text.shanghaitech }}</div>
+        {{ text.honorList[0] }}
       </div>
       <div class="bubble">
         <div class="year">2024</div>
-        <div class="level">ShanghaiTech University</div>
-        Outstanding Student
+        <div class="level">{{ text.shanghaitech }}</div>
+        {{ text.honorList[1] }}
       </div>
       <div class="bubble">
         <div class="year">2023</div>
-        <div class="level">ShanghaiTech University</div>
-        Outstanding Industrial Practice Member
+        <div class="level">{{ text.shanghaitech }}</div>
+        {{ text.honorList[2] }}
       </div>
       <div class="bubble">
         <div class="year">2022</div>
-        <div class="level">ShanghaiTech University</div>
-        Outstanding Student Union Offcer
+        <div class="level">{{ text.shanghaitech }}</div>
+        {{ text.honorList[3] }}
       </div>
     </div>
   </div>
@@ -29,9 +29,10 @@
 
 <script setup>
 
-  import { onMounted } from 'vue';
+  import { onMounted, computed } from 'vue';
   import ScrollReveal from 'scrollreveal';
   import { revealConfig } from '../utils/config';
+  import { useLanguageStore } from '@/stores/language';
 
   onMounted(()=>{
 
@@ -42,6 +43,10 @@
     });
 
   })
+
+  // 文字内容获取
+  const languageStore = useLanguageStore();
+  const text = computed(() => languageStore.text[languageStore.languageClass])
 
 </script>
 

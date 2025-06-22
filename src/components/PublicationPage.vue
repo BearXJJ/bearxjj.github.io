@@ -5,10 +5,12 @@
       <div class="paper">
         <img class="system-image" src="../assets/images/cluecart.png" alt="">
         <div class="system-name">ClueCart</div>
+
         <div class="info">
           <div class="name">ClueCart: Supporting Game Story Interpretation and Narrative Inference from Fragmented Clues</div>
           <div class="author">Xiyuan Wang, Yifan Cao, <strong>Junjie Xiong</strong>, Sizhe Chen, Wenxuan Li, Junjie Zhang, Quan Li</div>
           <div class="acceptby">CHI 2025</div>
+          <div class="best-paper">🏆 Best Paper Award</div>
         </div>
       </div>
     </div>
@@ -115,6 +117,14 @@
             font-size: 18px;
             margin-top: 25px;
           }
+          .best-paper{
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #b90b0b;
+          }
         }
       }
     }
@@ -157,6 +167,9 @@
               z-index: 2;
             }
             .acceptby{
+              z-index: 2;
+            }
+            .best-paper{
               z-index: 2;
             }
           }

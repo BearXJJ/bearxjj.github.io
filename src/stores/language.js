@@ -26,8 +26,8 @@ export const useLanguageStore = defineStore('language', ()=>{
       EN: "Honors"
     },
     hi: {
-      CN: "你好,",
-      EN: "Hi,"
+      CN: "你好 👋",
+      EN: "Hi 👋"
     },
     im: {
       CN: "我是",
@@ -59,6 +59,11 @@ export const useLanguageStore = defineStore('language', ()=>{
         EN: "."
       }
     ],
+    slogan: {
+      CN: "我在努力寻找自己的道路，并愿意尝试一切新鲜事物。",
+      EN: `I am trying to find my own way,
+           and I am willing to try all new things.`
+    },
     highSchool: [
       {
         CN: "高中",

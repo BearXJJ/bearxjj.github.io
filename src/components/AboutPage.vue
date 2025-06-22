@@ -5,6 +5,7 @@
       <div class="prologue">
         <h1>{{ text.hi }}<br>{{ text.im }} <span class="name">{{ text.name }}</span></h1>
         <div class="about-text">{{ text.intro[0] }}<a href="https://www.shanghaitech.edu.cn/" class="name link" target="_blank">{{ text.intro[1] }}</a>{{ text.intro[2] }}<a href="https://faculty.sist.shanghaitech.edu.cn/liquan/" class="name link" target="_blank">{{ text.intro[3] }}</a>{{ text.intro[4] }} </div>
+        <div class="slogan">{{ text.slogan }}</div>
       </div>
 
       <div class="social">
@@ -74,7 +75,6 @@
   .about{
     display: flex;
     position: relative;
-    position: relative;
     height: calc(100vh - 80px);
     width: calc(100% - 16%);
     max-width: 1500px;
@@ -84,7 +84,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      // width: 50%;
+      padding-top: 30px;
       flex: 1;
       height: 100%;
       .prologue{
@@ -117,6 +117,12 @@
           font-size: clamp(15px, 1.5vw, 25px);
           line-height: 1.5;
         }
+        .slogan{
+          color: @text-color-2;
+          margin-top: 20px;
+          font-size: clamp(20px, 2vw, 28px);
+          font-weight: 600;
+        }
       }
       .social{
         margin-top: 20px;
@@ -133,7 +139,7 @@
       text-align: right;
       .blob{
         width: 85%;
-        fill: rgba(120, 134, 24, 0.9);
+        fill: @theme-color;
         margin-top: calc(15%);
         .image{
           width: 305px;

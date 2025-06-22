@@ -15,7 +15,13 @@
         <div class="major">{{ text.bachelor[2] }}<br> {{ text.bachelor[3] }}</div>
         <div class="time">{{ text.bachelor[4] }}</div>
       </a>
-      <div class="school-box"></div>
+      <a class="school-box" href="https://www.shanghaitech.edu.cn/" target="_blank">
+        <div class="stage">{{ text.master[0] }}</div>
+        <img class="image" src="../assets/images/shanghaitech.png" alt="">
+        <div class="name">{{ text.master[1] }}</div>
+        <div class="major">{{ text.master[2] }}</div>
+        <div class="time">{{ text.master[3] }}</div>
+      </a>
     </div>
   </div>
 

@@ -100,6 +100,24 @@ export const useLanguageStore = defineStore('language', ()=>{
         EN: "2021.9 - 2025.6"
       }
     ],
+    master: [
+      {
+        CN: "研究生",
+        EN: "Master"
+      },
+      {
+        CN: "上海科技大学",
+        EN: "Shanghaitech University"
+      },
+      {
+        CN: "计算机科学与技术",
+        EN: "Computer Science and Technology"
+      },
+      {
+        CN: "2025.9 - 至今",
+        EN: "2025.9 - present"
+      }
+    ],
     honorList:[
       {
         CN: "国家励志奖学金",

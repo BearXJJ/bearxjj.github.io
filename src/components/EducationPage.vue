@@ -88,7 +88,7 @@
         transition: ease 0.3s;
         &:hover{
           margin-top: 25px;
-          box-shadow: rgba(0,0,0,0.4) 0px 8px 32px 0px;
+          box-shadow: @text-color-2 0px 4px 32px 0px;
         }
         .stage{
           color: @theme-color;

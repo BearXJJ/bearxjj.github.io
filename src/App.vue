@@ -1,7 +1,7 @@
 <template>
   <div class="homepage" @click="playColor">
     <header class="header">
-        <img class="logo" src="./assets/icons/logo.png" @click="scrollToSection('about')" @mouseenter="playSounds('./sounds/bubble.wav')" alt="">
+        <img class="logo" src="./assets/icons/logo.png" @mouseenter="playSounds('./sounds/bubble.wav')" alt="">
         <div class="menu">
           <button class="mybutton link" @click="scrollToSection('about')">{{ text.about }}</button>
           <button class="mybutton link" @click="scrollToSection('educations')">{{ text.education }}</button>
@@ -44,7 +44,15 @@
           </mask>
           <g mask="url(#mask-mobile)">
             <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-            <image class="image" x="90" y="70" href="@/assets/images/light-photo.jpeg"/>
+            <image
+              class="image"
+              x="0"
+              y="0"
+              width="479"
+              height="467"
+              preserveAspectRatio="xMidYMid slice"
+              :href="mobilePhotoUrl"
+            />
           </g>
         </svg>
       </div>
@@ -53,6 +61,16 @@
         <button class="mybutton link" @click="scrollToSection('educations')">Educations</button>
         <button class="mybutton link" @click="scrollToSection('publications')">Publications</button>
         <button class="mybutton link" @click="scrollToSection('honors')">Honors</button>
+      </div>
+      <div class="menu-controls">
+        <button class="mybutton control-btn" @click="changeTheme()">
+          <box-icon :name="themeClass === 'themeLight' ? 'sun' : 'moon'"
+                    size="20px"
+                    :color="themeClass === 'themeLight' ? 'black' : 'white'"></box-icon>
+        </button>
+        <button class="mybutton control-btn" @click="changeLanguage()">
+          <span class="control-badge">{{ languageStore.languageClass === 'CN' ? '中' : 'EN' }}</span>
+        </button>
       </div>
     </div>
 
@@ -70,6 +88,8 @@
   import { playSounds } from './utils/utils';
   import { useLanguageStore } from './stores/language'
   import './utils/click-colorful.js';
+  import lightPhoto from '@/assets/images/light-photo.jpeg';
+  import darkPhoto from '@/assets/images/dark-photo.jpeg';
 
   onMounted(()=>{
     document.documentElement.classList.add('hide-scrollbar');
@@ -147,6 +167,9 @@
     themeClass.value = localStorage.themeClass || 'themeLight';
     document.querySelector('html').classList.add(themeClass.value);
   })
+  const mobilePhotoUrl = computed(() =>
+    themeClass.value === 'themeDark' ? darkPhoto : lightPhoto
+  );
   const changeTheme = ()=>{
     const type = (themeClass.value === 'themeLight') ? 'themeDark': 'themeLight';
     themeClass.value = type;
@@ -290,53 +313,94 @@
       .drawer{
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 50px;
         position: absolute;
-        height: calc(100% - 80px);
+        height: calc(100vh - 80px);
         width: 100%;
         left: 0;
         top: 80px;
-        background-color: @bg-color;
+        padding: 10px 0 18px;
+        background-color: @bg-card;
+        border-top: 1px solid @theme-border;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        overflow-y: auto;
+        overflow-x: hidden;
         .profile{
-          height: 40%;
+          flex: 0 0 auto;
+          height: auto;
           text-align: center;
+          margin-top: 40px;
           .blob{
-            width: 60%;
+            width: min(240px, 60vw);
+            display: block;
+            margin: 0 auto;
             fill: @theme-color;
-            margin-top: calc(5%);
+            margin-top: 0;
             .image{
-              width: 305px;
+              width: 100%;
+              height: 100%;
             }
           }
         }
         .menu-mobile{
-          flex: 1;
+          flex: 0 0 auto;
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
           align-items: center;
-          font-size: 20px;
+          width: 100%;
+          gap: 30px;
+          padding: 4px 0;
+          font-size: 16px;
           font-weight: 600;
-          padding-bottom: 30px;
           .link{
-            position: relative;
-            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: min(340px, 86vw);
+            height: 44px;
+            border-radius: 999px;
+            background: @bg-card;
+            border: 1px solid @theme-border;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
             color: @text-color-1;
-            &::after{
-              position: absolute;
-              content: '';
-              bottom: -1px;
-              left: 50%;
-              width: 0;
-              height: 3px;
-              background-color: @theme-color;
-              transition: width 0.3s ease;
-              transform: translateX(-50%);
-            }
-            &:hover::after {
-              width: 100%;
-            }
           }
         }
+        .menu-controls{
+          width: min(340px, 86vw);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          margin-top: 4px;
+          padding-bottom: 6px;
+          .control-btn{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+            gap: 10px;
+            width: 100%;
+            border-radius: 999px;
+            background: @bg-card;
+            border: 1px solid @theme-border;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+          }
+          .control-badge{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: @text-color-1;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+      .theme-button,
+      .language-button{
+        display: none;
       }
     }
   }

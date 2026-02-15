@@ -1,18 +1,24 @@
 
 .themeLight {
-  --theme-color: rgba(62, 110, 243, 1);
+  --theme-color: rgb(62, 110, 243);
   --text-color-1: rgba(32, 32, 32, 1);
   --text-color-2: rgba(75, 75, 75, 1);
   --bg-color: rgba(255, 255, 255, 1);
-  --card-color: rgba(130, 162, 244, 1);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --title-bg-color: rgba(0, 0, 0, 0.03);
+  --theme-tint: rgba(62, 110, 243, 0.1);
+  --theme-border: rgba(62, 110, 243, 0.4);
 }
 
 .themeDark {
-  --theme-color: rgba(4, 216, 216, 1);
+  --theme-color: rgb(4, 216, 216);
   --text-color-1: rgba(249, 250, 251, 0.9);
   --text-color-2: rgba(249, 250, 251, 0.7);
   --bg-color: rgba(17, 24, 39, 1);
-  --card-color: rgba(3, 149, 165, 1);
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --title-bg-color: rgba(255, 255, 255, 0.06);
+  --theme-tint: rgba(4, 216, 216, 0.1);
+  --theme-border: rgba(4, 216, 216, 0.4);
 }
 
 
@@ -20,5 +26,7 @@
 @text-color-1: var(--text-color-1);
 @text-color-2: var(--text-color-2);
 @bg-color: var(--bg-color);
-@card-color: var(--card-color);
-
+@bg-card: var(--bg-card);
+@title-bg-color: var(--title-bg-color);
+@theme-tint: var(--theme-tint);
+@theme-border: var(--theme-border);

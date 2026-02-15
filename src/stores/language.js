@@ -37,28 +37,10 @@ export const useLanguageStore = defineStore('language', ()=>{
       CN: "熊俊杰",
       EN: "Junjie Xiong"
     },
-    intro: [
-      {
-        CN: "我目前就读于",
-        EN: "I am currently in my final year as an undergraduate student at "
-      },
-      {
-        CN: "上海科技大学",
-        EN: "Shanghaitech University"
-      },
-      {
-        CN: "，是计算机科学与技术专业的一名大四本科生。我积极参与ViSeer LAB的工作，在",
-        EN: ", majoring in Computer Science and Technology. I am actively involved in research at ViSeer LAB, under the supervision of "
-      },
-      {
-        CN: "李权教授",
-        EN: "Prof. Quan Li"
-      },
-      {
-        CN: "的指导下开展学术研究。",
-        EN: "."
-      }
-    ],
+    intro: {
+      CN: "我目前就读于<a href=\"https://www.shanghaitech.edu.cn/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">上海科技大学</a>，是计算机科学与技术专业的一年级研究生。我积极参与 <a href=\"https://viseerlab.cn/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">ViSeer LAB</a> 的工作，在<a href=\"https://faculty.sist.shanghaitech.edu.cn/liquan/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">李权教授</a>的指导下开展学术研究。",
+      EN: "I am currently a master student at <a href=\"https://www.shanghaitech.edu.cn/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">Shanghaitech University</a>, majoring in Computer Science and Technology. I am actively involved in research at <a href=\"https://viseerlab.cn/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">ViSeer LAB</a> under the supervision of <a href=\"https://faculty.sist.shanghaitech.edu.cn/liquan/\" class=\"name link\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Quan Li</a>."
+    },
     slogan: {
       CN: "我在努力寻找自己的道路，并愿意尝试一切新鲜事物。",
       EN: `I am trying to find my own way,

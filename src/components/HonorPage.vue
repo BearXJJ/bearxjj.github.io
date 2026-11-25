@@ -30,22 +30,22 @@
 
   const honorItems = computed(() => [
     {
-      year: '2022 2023 2024',
+      year: '2026',
       level: text.value.shanghaitech,
       title: text.value.honorList[0],
     },
     {
-      year: '2024',
+      year: '2026',
       level: text.value.shanghaitech,
       title: text.value.honorList[1],
     },
     {
-      year: '2023',
+      year: '2022 2023 2024',
       level: text.value.shanghaitech,
       title: text.value.honorList[2],
     },
     {
-      year: '2022',
+      year: '2024',
       level: text.value.shanghaitech,
       title: text.value.honorList[3],
     },

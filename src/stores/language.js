@@ -102,6 +102,14 @@ export const useLanguageStore = defineStore('language', ()=>{
     ],
     honorList:[
       {
+        CN: "国家奖学金",
+        EN: "National Scholarship"
+      },
+      {
+        CN: "华虹企业奖学金",
+        EN: "Huahong Enterprise Scholarship"
+      },
+      {
         CN: "国家励志奖学金",
         EN: "National Encouragement Scholarship"
       },

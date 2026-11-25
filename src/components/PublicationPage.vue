@@ -56,12 +56,30 @@ const text = computed(() => languageStore.text[languageStore.languageClass]);
 
 const paperList = computed(() => [
   {
+    title: "GeneaLink: Reconstructing Marriages in Genealogies with Visual Analytics Coupling GNN Link Prediction and Multi-Agent Negotiation",
+    authors: "Zhuoyang Bu, Junjie Xiong, Shenghan Gao, Haipeng Zhang, Quan Li",
+    venue: "IEEE VIS 2026",
+    image: new URL('../assets/images/GeneaLink.png', import.meta.url).href,
+    links: {
+      Link: "https://www.ieeevis.org/year/2026/program/content/3ab25979-d321-4ba3-a7ed-0bf5072c3599",
+    }
+  },
+  {
     title: "WordCraft: Scaffolding the Keyword Method for L2 Vocabulary Learning with Multimodal LLMs",
     authors: "Yuheng Shao*, Junjie Xiong*, Chaoran Wu, Xiyuan Wang, Ziyu Zhou, Yang Ouyang, Qinyi Tao, Quan Li",
     venue: "CHI 2026",
     image: new URL('../assets/images/wordcraft.png', import.meta.url).href,
     links: {
       PDF: "https://arxiv.org/pdf/2602.00762",
+    }
+  },
+  {
+    title: "VidSense: Facilitating Incremental Externalization and Knowledge Consolidation via Canvas-Based Interactions in Video Learning",
+    authors: "Yang Ouyang, Shenghan Gao, Yuheng Shao, Junjie Xiong, Xiyuan Wang, Quan Li",
+    venue: "CHI 2026",
+    image: new URL('../assets/images/VidSense.png', import.meta.url).href,
+    links: {
+      Link: "https://doi.org/10.1145/3772363.3798388",
     }
   },
   {
